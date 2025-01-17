@@ -58,13 +58,30 @@ Các thành phần chính:
 
 ---
 
-## Hướng dẫn sử dụng
-#### 1. Khởi chạy ứng dụng **TemperatureClient.exe**.
-#### 2. Nhập nhiệt độ vào ô nhập liệu.
-#### 3. Nhấn nút **Convert to Celsius** hoặc **Convert to Fahrenheit** để thực hiện chuyển đổi và hiển thị kết quả.
+## Kết quả đạt được
+### Giao diện ứng dụng phía Client
+Giao diện ứng dụng Windows Forms (`TemperatureClient`) bao gồm:
+- Một ô nhập liệu (textbox) để nhập nhiệt độ cần chuyển đổi.
+- Hai nút bấm (button):
+   - `Convert to Celsius`: Chuyển đổi nhiệt độ từ Fahrenheit sang Celsius.
+   - `Convert to Fahrenheit`: Chuyển đổi nhiệt độ từ Celsius sang Fahrenheit.
+- Một nhãn (label) để hiển thị kết quả chuyển đổi.
+Hình minh họa giao diện: Ứng dụng hiển thị giao diện đơn giản với các thành phần được bố trí rõ ràng (như trong hình).
 
----
-
+### Kết quả khi thực thi
+#### 1. Khi nhập một giá trị hợp lệ vào ô nhập liệu và nhấn `Convert to Celsius`:
+- Ứng dụng gửi giá trị Fahrenheit tới dịch vụ web.
+- Dịch vụ trả về giá trị Celsius tương ứng.
+- Kết quả hiển thị trên nhãn lblResult (ví dụ: 32 Fahrenheit = 0 Celsius).
+#### 2. Khi nhập một giá trị hợp lệ vào ô nhập liệu và nhấn `Convert to Fahrenheit`:
+- Ứng dụng gửi giá trị Celsius tới dịch vụ web.
+- Dịch vụ trả về giá trị Fahrenheit tương ứng.
+- Kết quả hiển thị trên nhãn lblResult (ví dụ: 0 Celsius = 32 Fahrenheit).
+#### 3. Nếu nhập một giá trị không hợp lệ (ví dụ: chuỗi ký tự thay vì số):
+- Ứng dụng hiển thị thông báo lỗi yêu cầu nhập giá trị hợp lệ.
+## Một số lưu ý khi sử dụng
+- Đảm bảo rằng dịch vụ TemperatureServer đang chạy và có thể truy cập từ máy client.
+- Đối với các lỗi kết nối hoặc sự cố dịch vụ, ứng dụng sẽ thông báo lỗi cụ thể để người dùng xử lý.
 ## Yêu cầu hệ thống
 - Hệ điều hành Windows với .NET Framework 4.7 hoặc mới hơn.
 - TemperatureServer phải đang hoạt động và có thể truy cập.
